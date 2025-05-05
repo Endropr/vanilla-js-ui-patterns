@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tyumen News</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+
+      function searchNews() {
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        const cards = document.querySelectorAll('.news-card');
+        cards.forEach(card => {
+          const title = card.querySelector('.news-title').textContent.toLowerCase();
+          if (title.includes(query)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+
+
+      function toggleTheme() {
+        document.body.classList.toggle('dark-theme');
+        const btn = document.getElementById('themeToggleBtn');
+        btn.textContent = document.body.classList.contains('dark-theme') ? 'Светлая тема' : 'Тёмная тема';
+      }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <h1>Новости Тюмени</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Главное</a></li>
+                    <li><a href="1_Политика.html">Политика</a></li>
+                    <li><a href="2_Общество.html">Общество</a></li>
+                    <li><a href="3_Экономика.html">Экономика</a></li>
+                    <li><a href="4_Спорт.html">Спорт</a></li>
+                    <li><a href="5_Туризм.html">Туризм</a></li>
+                </ul>
+            </nav>
+            <div class="header-controls">
+                <input type="text" id="searchInput" placeholder="Поиск новостей..." oninput="searchNews()" aria-label="Поиск новостей" />
+                <button id="themeToggleBtn" onclick="toggleTheme()">Тёмная тема</button>
+            </div>
+        </div>
+    </header>
+    <div class="center-both">
+    <h1>Экономика Тюмени.</h1>
+    <main class="container">
+        <section class="news-grid">
+            <article class="news-card">
+                <h2 class="news-title">Тюменские работодатели заявили рекордное количество вакансий</h2>
+                <p>26,3 тыс. вакансий разместили работодатели Тюменской области за неделю. Наибольшая доля предложений приходится на строительство, деятельность в области культуры, спорта, организации досуга и …</p>
+                <time datetime="2025-05-30T10:00">30 мая 2025, 10:00</time>
+                <a href="#" class="read-more">Читать далее</a>
+            </article>
+
+            <article class="news-card">
+                <h2 class="news-title">Тюменские аграрии получат субсидии на поддержку элитного семеноводства </h2>
+                <p>Тюменским сельхозпроизводителям возместят часть затрат на поддержку элитного семеноводства. Субсидия выплачивается по ставке на одну тонну приобретенных элитных либо оригинальных семян: картофель - …</p>
+                <time datetime="2025-05-29T15:30">29 мая 2025, 15:30</time>
+                <a href="#" class="read-more">Читать далее</a>
+            </article>
+
+            <article class="news-card">
+                <h2 class="news-title">Тюменским предприятиям помогут с поставкой стройматериалов на Дальний Восток</h2>
+                <p>Строительные материалы производителей Тюменской области начнут поставлять на Дальний Восток. Соглашение об этом подписали Строительно-индустриальный кластер и Промышленно-строительный кластер …</p>
+                <time datetime="2025-05-28T12:45">28 мая 2025, 12:45</time>
+                <a href="#" class="read-more">Читать далее</a>
+            </article>
+
+            <article class="news-card">
+                <h2 class="news-title">Инвестором строительства Южного обхода Тюмени выступит банк </h2>
+                <p>Инвестором строительства Южного обхода Тюмени выступит банк ВТБ. Представители учреждения встретились с руководством ГУСа. ВТБ имеет большой опыт участия в инвестиционных строительных проектах по …</p>
+                <time datetime="2025-05-27T18:00">27 мая 2025, 18:00</time>
+                <a href="#" class="read-more">Читать далее</a>
+            </article>
+
+            <article class="news-card">
+                <h2 class="news-title">Отечественное оборудование устанавливают на очистных в Упорово</h2>
+                <p>Оборудование отечественного производства устанавливают на канализационных очистных сооружениях в Упорово. Объект стратегически важен для района - производительность составит более 1,5 тыс. куб. м …</p>
+                <time datetime="2025-05-26T09:20">26 мая 2025, 09:20</time>
+                <a href="#" class="read-more">Читать далее</a>
+            </article>
+
+            <article class="news-card">
+                <h2 class="news-title">В Тобольске обозначили планы развития программы «Открытая промышленность»</h2>
+                <p>Финал программы по развитию промышленного туризма «Открытая промышленность» проходит в Тобольске на площадке крупнейшего нефтехимического комплекса страны «ЗапСибНефтехима». …</p>
+                <time datetime="2025-05-25T20:45">25 мая 2025, 20:45</time>
+                <a href="#" class="read-more">Читать далее</a>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-container">
+            <p>© 2025 Бусыгин Александр, ИС-23-2С.</p>
+            <p>ТКПСТ. Все права защищены.</p>
+            <p><a href="#">Политика конфедициальности</a><br></p>
+        </div>
+    </footer>
+</body>
+</html>

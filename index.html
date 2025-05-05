@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tyumen News</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      // Поиск по заголовкам 
+      function searchNews() {
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        const cards = document.querySelectorAll('.news-card');
+        cards.forEach(card => {
+          const title = card.querySelector('.news-title').textContent.toLowerCase();
+          if (title.includes(query)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+
+      // Тема (дарк лайт)
+      function toggleTheme() {
+        document.body.classList.toggle('dark-theme');
+        const btn = document.getElementById('themeToggleBtn');
+        btn.textContent = document.body.classList.contains('dark-theme') ? 'Светлая тема' : 'Тёмная тема';
+      }
+
+      // Закрыть модальное окно
+      function closeWelcomeModal() {
+        const modal = document.getElementById('welcomeModal');
+        modal.style.display = 'none';
+      }
+
+      // Показать модальное окно
+      window.addEventListener('load', () => {
+        const modal = document.getElementById('welcomeModal');
+        modal.style.display = 'flex';
+      });
+    </script>
+</head>
+<body>
+    <!-- Модальное окно -->
+    <div id="welcomeModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle" aria-describedby="welcomeDesc" tabindex="-1" style="display:none;">
+      <div class="modal-content">
+        <h2 id="welcomeTitle">Добро пожаловать на сайт "Новости Тюмени"!</h2>
+        <p id="welcomeDesc">
+          Здесь вы найдете самые свежие новости и события нашего города.<br><br>
+          <strong>Гид по сайту:</strong><br>
+          - Используйте <a href="#">меню</a> сверху для перехода по категориям новостей.<br>
+          - Для быстрого поиска воспользуйтесь <a href="#">строкой поиска</a> справа вверху.<br>
+          - Переключайте светлую и тёмную тему с помощью <a href="#">кнопки</a> рядом с поиском.<br><br>
+          <strong>Авторы сайта</strong><br>
+          Автор сайта - Бусыгин Александр ИС-23-2С. <br><br>
+          <strong>Обратная связь:</strong><br>
+          Мои контакты для связи:<br>
+          ВКонтакте - <a href="https://vk.com/the_dezzy88">ПЕРЕЙТИ</a>.<br>
+          Telegram  - <a href="https://t.me/K_A_5_T_A">ПЕРЕЙТИ</a>.<br>
+          <button onclick="closeWelcomeModal()" aria-label="Закрыть приветственное окно">О как! Закрыть.</button>
+        </p>
+      </div>
+    </div>
+
+    <header>
+        <div class="container header-container">
+            <h1>Новости Тюмени</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="1_Политика.html">Политика</a></li>
+                    <li><a href="2_Общество.html">Общество</a></li>
+                    <li><a href="3_Экономика.html">Экономика</a></li>
+                    <li><a href="4_Спорт.html">Спорт</a></li>
+                    <li><a href="5_Туризм.html">Туризм</a></li>
+                    <li><a href="Пасхалка.html">Не нажимать!</a></li>
+                </ul>
+            </nav>
+            <div class="header-controls">
+                <input type="text" id="searchInput" placeholder="Поиск новостей..." oninput="searchNews()" aria-label="Поиск новостей" />
+                <button id="themeToggleBtn" onclick="toggleTheme()">Тёмная тема</button>
+            </div>
+        </div>
+    </header>
+    <div class="center-both">
+    <h1>Главные новости</h1>
+    <main class="container">
+        <section class="news-grid">
+            <article class="news-card">
+                <img src="images/к_центр.jpg" alt="Тюменский кремль" />
+                <h2 class="news-title">В Тюмени открыли новый культурный центр</h2>
+                <p>В центре города открылся современный культурный комплекс с выставками и мастер-классами.</p>
+                <time datetime="2025-05-30T10:00">30 мая 2025, 10:00</time>
+                <a href="#" class="read-more">Читать далее</a>
+            </article>
+
+            <article class="news-card">
+                <img src="images/парк.jpg" alt="Панорама Тюмени" />
+                <h2 class="news-title">Началась реконструкция центрального парка</h2>
+                <p>Работы по благоустройству парка продлятся до конца осени, появятся новые зоны отдыха и детские площадки.</p>
+                <time datetime="2025-05-29T15:30">29 мая 2025, 15:30</time>
+                <a href="#" class="read-more">Читать далее</a>
+            </article>
+
+            <article class="news-card">
+                <img src="images/вокзал.jpg" alt="Железнодорожный вокзал Тюмени" />
+                <h2 class="news-title">Тюменский вокзал модернизируют к зиме</h2>
+                <p>Планируется обновить инфраструктуру, улучшить комфорт для пассажиров и установить новые информационные панели.</p>
+                <time datetime="2025-05-28T12:45">28 мая 2025, 12:45</time>
+                <a href="#" class="read-more">Читать далее</a>
+            </article>
+
+            <article class="news-card">
+                <img src="images/еда.jpg" alt="Улица в Тюмени" />
+                <h2 class="news-title">В Тюмени пройдет фестиваль уличной еды</h2>
+                <p>Местные кафе и рестораны представят свои лучшие блюда на центральной площади города.</p>
+                <time datetime="2025-05-27T18:00">27 мая 2025, 18:00</time>
+                <a href="#" class="read-more">Читать далее</a>
+            </article>
+
+            <article class="news-card">
+                <img src="images/спорт.jpeg" alt="Спортивный комплекс в Тюмени" />
+                <h2 class="news-title">Спортивный комплекс Тюмени получил международную аккредитацию</h2>
+                <p>Это позволит проводить крупные соревнования и привлекать спортсменов со всей России и мира.</p>
+                <time datetime="2025-05-26T09:20">26 мая 2025, 09:20</time>
+                <a href="#" class="read-more">Читать далее</a>
+            </article>
+
+            <article class="news-card">
+                <img src="images/мост.jpg" alt="Ночной Тюмень" />
+                <h2 class="news-title">Ночные экскурсии по Тюмени стали популярнее</h2>
+                <p>Жители и туристы могут познакомиться с историей города в необычное время суток.</p>
+                <time datetime="2025-05-25T20:45">25 мая 2025, 20:45</time>
+                <a href="#" class="read-more">Читать далее</a>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-container">
+            <p>© 2025 Бусыгин Александр, ИС-23-2С.</p>
+            <p>ТКПСТ. Все права защищены.</p>
+            <p><a href="#">Политика конфедициальности</a><br></p>
+        </div>
+    </footer>
+</body>
+</html>

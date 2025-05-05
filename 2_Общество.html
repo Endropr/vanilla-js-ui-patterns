@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tyumen News</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      function searchNews() {
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        const cards = document.querySelectorAll('.news-card');
+        cards.forEach(card => {
+          const title = card.querySelector('.news-title').textContent.toLowerCase();
+          if (title.includes(query)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+
+      
+      function toggleTheme() {
+        document.body.classList.toggle('dark-theme');
+        const btn = document.getElementById('themeToggleBtn');
+        btn.textContent = document.body.classList.contains('dark-theme') ? 'Светлая тема' : 'Тёмная тема';
+      }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <h1>Новости Тюмени</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Главное</a></li>
+                    <li><a href="1_Политика.html">Политика</a></li>
+                    <li><a href="2_Общество.html">Общество</a></li>
+                    <li><a href="3_Экономика.html">Экономика</a></li>
+                    <li><a href="4_Спорт.html">Спорт</a></li>
+                    <li><a href="5_Туризм.html">Туризм</a></li>
+                </ul>
+            </nav>
+            <div class="header-controls">
+                <input type="text" id="searchInput" placeholder="Поиск новостей..." oninput="searchNews()" aria-label="Поиск новостей" />
+                <button id="themeToggleBtn" onclick="toggleTheme()">Тёмная тема</button>
+            </div>
+        </div>
+    </header>
+    <div class="center-both">
+    <h1>Тюменское общество.</h1>
+    <main class="container">
+        <section class="news-grid">
+            <article class="news-card">
+                <h2 class="news-title">В Тюменской области запретят продажу алкоголя на три дня в июне</h2>
+                <p>В Тюменской области три дня в июне будет действовать запрет на розничную продажу алкоголя. Ограничение регламентировано постановлением регионального правительства 2017 года и распространяется на следующие праздничные даты:</p>
+                <p> - День защиты детей 1 июня;</p>
+                <p> - День России 12 июня;</p>
+                <p> - День молодёжи 28 июня (последняя суббота).</p>
+                <time datetime="2025-05-30T10:00">30 мая 2025, 10:00</time>
+                <a href="#" class="read-more">Читать далее</a>
+            </article>
+
+            <article class="news-card">
+                <h2 class="news-title">Масштабный фестиваль джаза в Тюмени: фотогалерея</h2>
+                <p>Открытие второго джазового фестиваля FABRIC JAZZ состоялось 30 мая на Центральной площади в Тюмени. Посетить выступление джазовых коллективов мог любой желающий. Началось мероприятие с традиционного джазового шествия эстрадно-джазового оркестра «Золотая труба», после чего на сцене под открытым небом в течении четырех часов выступали три коллектива.</p>
+                <time datetime="2025-05-29T15:30">29 мая 2025, 15:30</time>
+                <a href="#" class="read-more">Читать далее</a>
+            </article>
+
+            <article class="news-card">
+                <h2 class="news-title">Тюменцы изготовили тысячу комплектов «сухого душа» для участников СВО</h2>
+                <p>Активисты первичных отделений «Единой России» в Тюмени организовали мастер-класс, куда пригласили коллег из других ячеек. Вместе они изготовили тысячу комплектов «сухого душа», которые передали на фронт. Об этом сообщает «Тюменская линия». «Сухой душ» – это комплект специальных средств для поддержания гигиены в полевых условиях. Он не требует смывания водой, а также предотвращает воспаление и заживляет раны.</p>
+                <time datetime="2025-05-28T12:45">28 мая 2025, 12:45</time>
+                <a href="#" class="read-more">Читать далее</a>
+            </article>
+
+            <article class="news-card">
+                <h2 class="news-title">Молодые учёные Тюмени отправятся в летнюю школу в Крыму</h2>
+                <p>Молодые тюменцы посетят летнюю школу арт-кластера «Таврида.АРТ» в Крыму с 13 по 19 июля. Мероприятие посвящено основателю советской атомной энергетики Игорю Курчатову и 80-летию атомной отрасли, сообщает издание «КП-Тюмень».</p>
+                <time datetime="2025-05-27T18:00">27 мая 2025, 18:00</time>
+                <a href="#" class="read-more">Читать далее</a>
+            </article>
+
+            <article class="news-card">
+                <h2 class="news-title">Тюменским абитуриентам напоминают о правилах поступления в 2025 году</h2>
+                <p>Поступление в вузы в 2025 году начинается 20 июня. До 20 июля нужно подать документы тем, кто будет сдавать вступительные испытания (они пройдут с 21 июня по 25 июля). В последний день этого периода завершится прием документов от остальных поступающих.</p>
+                <time datetime="2025-05-26T09:20">26 мая 2025, 09:20</time>
+                <a href="#" class="read-more">Читать далее</a>
+            </article>
+
+            <article class="news-card">
+                <h2 class="news-title">В Тюмени в конце мая ожидается жара при +28 и гроза</h2>
+                <p>МЧС России по Тюменской области предвещает переменную облачность и без осадков. Ветер западный, северо-западный ночью 2-7 метров в секунду, днем 4-9 метров в секунду, в отдельных районах порывы до 14 метров. Температура ночью +11… +16, днем +26… +31.</p>
+                <time datetime="2025-05-25T20:45">25 мая 2025, 20:45</time>
+                <a href="#" class="read-more">Читать далее</a>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-container">
+            <p>© 2025 Бусыгин Александр, ИС-23-2С.</p>
+            <p>ТКПСТ. Все права защищены.</p>
+            <p><a href="#">Политика конфедициальности</a><br></p>
+        </div>
+    </footer>
+</body>
+</html>
