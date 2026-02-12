@@ -1,8 +1,8 @@
-# 📰 Tyumen News Portal — UI/UX & Frontend Case Study
+#  Tyumen News Portal — UI/UX & Frontend Case Study
 
 A comprehensive multi-page news portal concept. This project demonstrates the transition from a custom-designed Figma layout to a functional, responsive frontend implementation using Vanilla JavaScript.
 
-## 🎨 Design-to-Code Workflow
+##  Design-to-Code Workflow
 This project was developed following a professional lifecycle:
 1. **Visual Design:** Created a full-scale multi-page UI in Figma with a focus on typography and content hierarchy.
 2. **Prototyping:** Structured the user journey across 6+ unique categories (Politics, Sport, Culture, etc.).
@@ -12,14 +12,14 @@ This project was developed following a professional lifecycle:
 
 ---
 
-## 🚀 Key Technical Features
+##  Key Technical Features
 
 * **Custom Client-Side Search:** Implemented a keyword-based filtering system using Vanilla JS to navigate through news articles.
 * **Dynamic Theme Engine:** A toggleable Dark/Light mode system that persists across sessions using `LocalStorage`.
 * **Responsive Multi-page Architecture:** Adaptive grid layouts ensuring readability on mobile and desktop devices.
 * **Interactive UI Components:** Custom-built modal windows for subscriptions and interactive navigation menus without external libraries.
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 * **Design:** Figma
 * **Markup:** HTML5 (Semantic elements)
@@ -28,7 +28,7 @@ This project was developed following a professional lifecycle:
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 * `/index.html` — Main portal landing page.
 * `/pages/` — Topic-specific layouts (Sport, Politics, Science, etc.).
 * `/style.css` — Centralized styles including the color variable system for theme switching.
