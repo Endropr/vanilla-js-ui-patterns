@@ -36,4 +36,4 @@ This project was developed following a professional lifecycle:
 
 ---
 
-> **Note:** This repository is part of a legacy collection, representing my frontend development progress during May 2025. It serves as a showcase of my UI/UX foundations and Vanilla JS proficiency.
+> **Note:** This repository is part of a legacy collection, representing my frontend development progress during May 2025. It serves as a showcase of my UI/UX foundations and Vanilla JS proficiency. 
